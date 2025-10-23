@@ -18,7 +18,7 @@
     <!-- Specifies information for Assembly and Yak -->
     <Version>1.0</Version>
     <Title>BcaEttv</Title>
-    <Company>Irfan Irwwanuddin</Company>
+    <Company>Irfan Irwanuddin</Company>
     <Description>BcaEttv plugin for BCA Singapore ETTV Compliance</Description>
   </PropertyGroup>
   
