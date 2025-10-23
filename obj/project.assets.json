@@ -727,11 +727,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/irfan/Projects/BcaEttv/BcaEttv.csproj",
+      "projectUniqueName": "/Users/irfan/Documents/Learn/GitHub/BcaEttv/BcaEttv.csproj",
       "projectName": "BcaEttv",
-      "projectPath": "/Users/irfan/Projects/BcaEttv/BcaEttv.csproj",
+      "projectPath": "/Users/irfan/Documents/Learn/GitHub/BcaEttv/BcaEttv.csproj",
       "packagesPath": "/Users/irfan/.nuget/packages/",
-      "outputPath": "/Users/irfan/Projects/BcaEttv/obj/",
+      "outputPath": "/Users/irfan/Documents/Learn/GitHub/BcaEttv/obj/",
       "projectStyle": "PackageReference",
       "crossTargeting": true,
       "configFilePaths": [

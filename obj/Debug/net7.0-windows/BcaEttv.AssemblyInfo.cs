@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyDescriptionAttribute("BcaEttv plugin for BCA Singapore ETTV Compliance")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+2c562ecdc9d54bb1f4fb55c6ca0b866cb2dec88c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+5d02d330f4bd96658eb542cde8bce5fb0ecdbc97")]
 [assembly: System.Reflection.AssemblyProductAttribute("BcaEttv")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BcaEttv")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
