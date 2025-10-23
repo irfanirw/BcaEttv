@@ -12,3 +12,4 @@
 /Users/irfan/Projects/BcaEttv/obj/Debug/net7.0/BcaEttv.pdb
 /Users/irfan/Projects/BcaEttv/obj/Debug/net7.0/BcaEttv.genruntimeconfig.cache
 /Users/irfan/Projects/BcaEttv/obj/Debug/net7.0/ref/BcaEttv.gha
+/Users/irfan/Projects/BcaEttv/obj/Debug/net7.0/BcaEttv.sourcelink.json
