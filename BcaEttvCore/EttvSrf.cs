@@ -38,7 +38,7 @@ namespace BcaEttvCore
 
         public double GetSc1(double sc1, double sc2)
         {
-            return sc1 + sc2; // Example logic
+            return sc1 * sc2; // Example logic
         }
 
         public double GetSc2(double r1)

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BcaEttvCore")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+aa16d1a1e12ab7adb943ca2bf3471c6f7f21347b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f5990655faf6fbb9c59a399ea5c3b8057fb8c66f")]
 [assembly: System.Reflection.AssemblyProductAttribute("BcaEttvCore")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BcaEttvCore")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
