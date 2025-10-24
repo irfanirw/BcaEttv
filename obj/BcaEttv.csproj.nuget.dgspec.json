@@ -1,21 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "/Users/irfan/Documents/Learn/GitHub/BcaEttv/BcaEttv.csproj": {}
+    "C:\\Users\\iirwanuddin\\OneDrive - Exyte\\Documents\\GitHub\\BcaEttv\\BcaEttv.csproj": {}
   },
   "projects": {
-    "/Users/irfan/Documents/Learn/GitHub/BcaEttv/BcaEttv.csproj": {
+    "C:\\Users\\iirwanuddin\\OneDrive - Exyte\\Documents\\GitHub\\BcaEttv\\BcaEttv.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/irfan/Documents/Learn/GitHub/BcaEttv/BcaEttv.csproj",
+        "projectUniqueName": "C:\\Users\\iirwanuddin\\OneDrive - Exyte\\Documents\\GitHub\\BcaEttv\\BcaEttv.csproj",
         "projectName": "BcaEttv",
-        "projectPath": "/Users/irfan/Documents/Learn/GitHub/BcaEttv/BcaEttv.csproj",
-        "packagesPath": "/Users/irfan/.nuget/packages/",
-        "outputPath": "/Users/irfan/Documents/Learn/GitHub/BcaEttv/obj/",
+        "projectPath": "C:\\Users\\iirwanuddin\\OneDrive - Exyte\\Documents\\GitHub\\BcaEttv\\BcaEttv.csproj",
+        "packagesPath": "C:\\Users\\iirwanuddin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\iirwanuddin\\OneDrive - Exyte\\Documents\\GitHub\\BcaEttv\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "configFilePaths": [
-          "/Users/irfan/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\iirwanuddin\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net48",
@@ -105,7 +105,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.306/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305\\RuntimeIdentifierGraph.json"
         },
         "net7.0-windows7.0": {
           "targetAlias": "net7.0-windows",
@@ -149,7 +149,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.306/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305\\RuntimeIdentifierGraph.json"
         },
         "net48": {
           "targetAlias": "net48",
@@ -166,7 +166,7 @@
               "autoReferenced": true
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.306/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -18,3 +18,11 @@
 /Users/irfan/Documents/Learn/GitHub/BcaEttv/obj/Debug/net48/BcaEttv.sourcelink.json
 /Users/irfan/Documents/Learn/GitHub/BcaEttv/obj/Debug/net48/BcaEttv.gha
 /Users/irfan/Documents/Learn/GitHub/BcaEttv/obj/Debug/net48/BcaEttv.pdb
+C:\Users\iirwanuddin\OneDrive - Exyte\Documents\GitHub\BcaEttv\obj\Debug\net48\BcaEttv.csproj.AssemblyReference.cache
+C:\Users\iirwanuddin\OneDrive - Exyte\Documents\GitHub\BcaEttv\obj\Debug\net48\BcaEttv.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\iirwanuddin\OneDrive - Exyte\Documents\GitHub\BcaEttv\obj\Debug\net48\BcaEttv.AssemblyInfoInputs.cache
+C:\Users\iirwanuddin\OneDrive - Exyte\Documents\GitHub\BcaEttv\obj\Debug\net48\BcaEttv.AssemblyInfo.cs
+C:\Users\iirwanuddin\OneDrive - Exyte\Documents\GitHub\BcaEttv\obj\Debug\net48\BcaEttv.csproj.CoreCompileInputs.cache
+C:\Users\iirwanuddin\OneDrive - Exyte\Documents\GitHub\BcaEttv\obj\Debug\net48\BcaEttv.sourcelink.json
+C:\Users\iirwanuddin\OneDrive - Exyte\Documents\GitHub\BcaEttv\obj\Debug\net48\BcaEttv.gha
+C:\Users\iirwanuddin\OneDrive - Exyte\Documents\GitHub\BcaEttv\obj\Debug\net48\BcaEttv.pdb
