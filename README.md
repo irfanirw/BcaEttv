@@ -60,5 +60,3 @@ This project is licensed under the MIT License. See the LICENSE file for details
 Inspired by BCA Green Mark guidelines and Rhino.Geometry for spatial modeling.
 
 ---
-
-Would you like help adding badges, contribution guidelines, or generating a visual diagram for the class structure?
