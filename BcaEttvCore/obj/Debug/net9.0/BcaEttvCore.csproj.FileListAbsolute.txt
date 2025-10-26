@@ -1,13 +1,26 @@
-C:\Users\iirwanuddin\OneDrive - Exyte\Documents\GitHub\BcaEttv\BcaEttvCore\obj\Debug\net9.0\BcaEttvCore.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\iirwanuddin\OneDrive - Exyte\Documents\GitHub\BcaEttv\BcaEttvCore\obj\Debug\net9.0\BcaEttvCore.AssemblyInfoInputs.cache
-C:\Users\iirwanuddin\OneDrive - Exyte\Documents\GitHub\BcaEttv\BcaEttvCore\obj\Debug\net9.0\BcaEttvCore.AssemblyInfo.cs
-C:\Users\iirwanuddin\OneDrive - Exyte\Documents\GitHub\BcaEttv\BcaEttvCore\obj\Debug\net9.0\BcaEttvCore.csproj.CoreCompileInputs.cache
-C:\Users\iirwanuddin\OneDrive - Exyte\Documents\GitHub\BcaEttv\BcaEttvCore\obj\Debug\net9.0\BcaEttvCore.sourcelink.json
-C:\Users\iirwanuddin\OneDrive - Exyte\Documents\GitHub\BcaEttv\BcaEttvCore\bin\Debug\net9.0\BcaEttvCore.deps.json
-C:\Users\iirwanuddin\OneDrive - Exyte\Documents\GitHub\BcaEttv\BcaEttvCore\bin\Debug\net9.0\BcaEttvCore.dll
-C:\Users\iirwanuddin\OneDrive - Exyte\Documents\GitHub\BcaEttv\BcaEttvCore\bin\Debug\net9.0\BcaEttvCore.pdb
-C:\Users\iirwanuddin\OneDrive - Exyte\Documents\GitHub\BcaEttv\BcaEttvCore\obj\Debug\net9.0\BcaEttvCore.csproj.AssemblyReference.cache
-C:\Users\iirwanuddin\OneDrive - Exyte\Documents\GitHub\BcaEttv\BcaEttvCore\obj\Debug\net9.0\BcaEttvCore.dll
-C:\Users\iirwanuddin\OneDrive - Exyte\Documents\GitHub\BcaEttv\BcaEttvCore\obj\Debug\net9.0\refint\BcaEttvCore.dll
-C:\Users\iirwanuddin\OneDrive - Exyte\Documents\GitHub\BcaEttv\BcaEttvCore\obj\Debug\net9.0\BcaEttvCore.pdb
-C:\Users\iirwanuddin\OneDrive - Exyte\Documents\GitHub\BcaEttv\BcaEttvCore\obj\Debug\net9.0\ref\BcaEttvCore.dll
+C:/Users/iirwanuddin/OneDrive - Exyte/Documents/GitHub/BcaEttv/BcaEttvCore/obj/Debug/net9.0/BcaEttvCore.GeneratedMSBuildEditorConfig.editorconfig
+C:/Users/iirwanuddin/OneDrive - Exyte/Documents/GitHub/BcaEttv/BcaEttvCore/obj/Debug/net9.0/BcaEttvCore.AssemblyInfoInputs.cache
+C:/Users/iirwanuddin/OneDrive - Exyte/Documents/GitHub/BcaEttv/BcaEttvCore/obj/Debug/net9.0/BcaEttvCore.AssemblyInfo.cs
+C:/Users/iirwanuddin/OneDrive - Exyte/Documents/GitHub/BcaEttv/BcaEttvCore/obj/Debug/net9.0/BcaEttvCore.csproj.CoreCompileInputs.cache
+C:/Users/iirwanuddin/OneDrive - Exyte/Documents/GitHub/BcaEttv/BcaEttvCore/obj/Debug/net9.0/BcaEttvCore.sourcelink.json
+C:/Users/iirwanuddin/OneDrive - Exyte/Documents/GitHub/BcaEttv/BcaEttvCore/bin/Debug/net9.0/BcaEttvCore.deps.json
+C:/Users/iirwanuddin/OneDrive - Exyte/Documents/GitHub/BcaEttv/BcaEttvCore/bin/Debug/net9.0/BcaEttvCore.dll
+C:/Users/iirwanuddin/OneDrive - Exyte/Documents/GitHub/BcaEttv/BcaEttvCore/bin/Debug/net9.0/BcaEttvCore.pdb
+C:/Users/iirwanuddin/OneDrive - Exyte/Documents/GitHub/BcaEttv/BcaEttvCore/obj/Debug/net9.0/BcaEttvCore.csproj.AssemblyReference.cache
+C:/Users/iirwanuddin/OneDrive - Exyte/Documents/GitHub/BcaEttv/BcaEttvCore/obj/Debug/net9.0/BcaEttvCore.dll
+C:/Users/iirwanuddin/OneDrive - Exyte/Documents/GitHub/BcaEttv/BcaEttvCore/obj/Debug/net9.0/refint/BcaEttvCore.dll
+C:/Users/iirwanuddin/OneDrive - Exyte/Documents/GitHub/BcaEttv/BcaEttvCore/obj/Debug/net9.0/BcaEttvCore.pdb
+C:/Users/iirwanuddin/OneDrive - Exyte/Documents/GitHub/BcaEttv/BcaEttvCore/obj/Debug/net9.0/ref/BcaEttvCore.dll
+/Users/irfan/Documents/Learn/GitHub/BcaEttv/BcaEttvCore/bin/Debug/net9.0/BcaEttvCore.deps.json
+/Users/irfan/Documents/Learn/GitHub/BcaEttv/BcaEttvCore/bin/Debug/net9.0/BcaEttvCore.dll
+/Users/irfan/Documents/Learn/GitHub/BcaEttv/BcaEttvCore/bin/Debug/net9.0/BcaEttvCore.pdb
+/Users/irfan/Documents/Learn/GitHub/BcaEttv/BcaEttvCore/obj/Debug/net9.0/BcaEttvCore.csproj.AssemblyReference.cache
+/Users/irfan/Documents/Learn/GitHub/BcaEttv/BcaEttvCore/obj/Debug/net9.0/BcaEttvCore.GeneratedMSBuildEditorConfig.editorconfig
+/Users/irfan/Documents/Learn/GitHub/BcaEttv/BcaEttvCore/obj/Debug/net9.0/BcaEttvCore.AssemblyInfoInputs.cache
+/Users/irfan/Documents/Learn/GitHub/BcaEttv/BcaEttvCore/obj/Debug/net9.0/BcaEttvCore.AssemblyInfo.cs
+/Users/irfan/Documents/Learn/GitHub/BcaEttv/BcaEttvCore/obj/Debug/net9.0/BcaEttvCore.csproj.CoreCompileInputs.cache
+/Users/irfan/Documents/Learn/GitHub/BcaEttv/BcaEttvCore/obj/Debug/net9.0/BcaEttvCore.sourcelink.json
+/Users/irfan/Documents/Learn/GitHub/BcaEttv/BcaEttvCore/obj/Debug/net9.0/BcaEttvCore.dll
+/Users/irfan/Documents/Learn/GitHub/BcaEttv/BcaEttvCore/obj/Debug/net9.0/refint/BcaEttvCore.dll
+/Users/irfan/Documents/Learn/GitHub/BcaEttv/BcaEttvCore/obj/Debug/net9.0/BcaEttvCore.pdb
+/Users/irfan/Documents/Learn/GitHub/BcaEttv/BcaEttvCore/obj/Debug/net9.0/ref/BcaEttvCore.dll

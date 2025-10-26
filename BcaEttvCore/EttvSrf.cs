@@ -51,7 +51,7 @@ namespace BcaEttvCore
     {
         public Guid Id { get; set; }
         public string Name { get; set; }
-        public Vector3d Vector { get; set; }
+        public Vector2d Vector { get; set; }
         public double Cf { get; set; }
         public double CT { get; set; }
         public List<EttvSrf> EttvSrfs { get; set; }
