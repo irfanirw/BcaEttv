@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/irfan/Documents/Learn/GitHub/BcaEttv/BcaEttvCore/BcaEttvCore.csproj": {}
+    "C:\\Users\\iirwanuddin\\OneDrive - Exyte\\Documents\\GitHub\\BcaEttv\\BcaEttvCore\\BcaEttvCore.csproj": {}
   },
   "projects": {
-    "/Users/irfan/Documents/Learn/GitHub/BcaEttv/BcaEttvCore/BcaEttvCore.csproj": {
+    "C:\\Users\\iirwanuddin\\OneDrive - Exyte\\Documents\\GitHub\\BcaEttv\\BcaEttvCore\\BcaEttvCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/irfan/Documents/Learn/GitHub/BcaEttv/BcaEttvCore/BcaEttvCore.csproj",
+        "projectUniqueName": "C:\\Users\\iirwanuddin\\OneDrive - Exyte\\Documents\\GitHub\\BcaEttv\\BcaEttvCore\\BcaEttvCore.csproj",
         "projectName": "BcaEttvCore",
-        "projectPath": "/Users/irfan/Documents/Learn/GitHub/BcaEttv/BcaEttvCore/BcaEttvCore.csproj",
-        "packagesPath": "/Users/irfan/.nuget/packages/",
-        "outputPath": "/Users/irfan/Documents/Learn/GitHub/BcaEttv/BcaEttvCore/obj/",
+        "projectPath": "C:\\Users\\iirwanuddin\\OneDrive - Exyte\\Documents\\GitHub\\BcaEttv\\BcaEttvCore\\BcaEttvCore.csproj",
+        "packagesPath": "C:\\Users\\iirwanuddin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\iirwanuddin\\OneDrive - Exyte\\Documents\\GitHub\\BcaEttv\\BcaEttvCore\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/irfan/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\iirwanuddin\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -65,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.306/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
