@@ -13,21 +13,6 @@
 /Users/irfan/Projects/BcaEttv/obj/Debug/net7.0/BcaEttv.genruntimeconfig.cache
 /Users/irfan/Projects/BcaEttv/obj/Debug/net7.0/ref/BcaEttv.gha
 /Users/irfan/Projects/BcaEttv/obj/Debug/net7.0/BcaEttv.sourcelink.json
-/Users/irfan/Documents/Learn/GitHub/BcaEttv/bin/Debug/net7.0/BcaEttv.deps.json
-/Users/irfan/Documents/Learn/GitHub/BcaEttv/bin/Debug/net7.0/BcaEttv.runtimeconfig.json
-/Users/irfan/Documents/Learn/GitHub/BcaEttv/bin/Debug/net7.0/BcaEttv.gha
-/Users/irfan/Documents/Learn/GitHub/BcaEttv/bin/Debug/net7.0/BcaEttv.pdb
-/Users/irfan/Documents/Learn/GitHub/BcaEttv/obj/Debug/net7.0/BcaEttv.csproj.AssemblyReference.cache
-/Users/irfan/Documents/Learn/GitHub/BcaEttv/obj/Debug/net7.0/BcaEttv.GeneratedMSBuildEditorConfig.editorconfig
-/Users/irfan/Documents/Learn/GitHub/BcaEttv/obj/Debug/net7.0/BcaEttv.AssemblyInfoInputs.cache
-/Users/irfan/Documents/Learn/GitHub/BcaEttv/obj/Debug/net7.0/BcaEttv.AssemblyInfo.cs
-/Users/irfan/Documents/Learn/GitHub/BcaEttv/obj/Debug/net7.0/BcaEttv.csproj.CoreCompileInputs.cache
-/Users/irfan/Documents/Learn/GitHub/BcaEttv/obj/Debug/net7.0/BcaEttv.sourcelink.json
-/Users/irfan/Documents/Learn/GitHub/BcaEttv/obj/Debug/net7.0/BcaEttv.gha
-/Users/irfan/Documents/Learn/GitHub/BcaEttv/obj/Debug/net7.0/refint/BcaEttv.gha
-/Users/irfan/Documents/Learn/GitHub/BcaEttv/obj/Debug/net7.0/BcaEttv.pdb
-/Users/irfan/Documents/Learn/GitHub/BcaEttv/obj/Debug/net7.0/BcaEttv.genruntimeconfig.cache
-/Users/irfan/Documents/Learn/GitHub/BcaEttv/obj/Debug/net7.0/ref/BcaEttv.gha
 C:/Users/iirwanuddin/OneDrive - Exyte/Documents/GitHub/BcaEttv/obj/Debug/net7.0/BcaEttv.csproj.AssemblyReference.cache
 C:/Users/iirwanuddin/OneDrive - Exyte/Documents/GitHub/BcaEttv/obj/Debug/net7.0/BcaEttv.GeneratedMSBuildEditorConfig.editorconfig
 C:/Users/iirwanuddin/OneDrive - Exyte/Documents/GitHub/BcaEttv/obj/Debug/net7.0/BcaEttv.AssemblyInfoInputs.cache
@@ -37,3 +22,16 @@ C:/Users/iirwanuddin/OneDrive - Exyte/Documents/GitHub/BcaEttv/obj/Debug/net7.0/
 C:/Users/iirwanuddin/OneDrive - Exyte/Documents/GitHub/BcaEttv/obj/Debug/net7.0/BcaEttv.gha
 C:/Users/iirwanuddin/OneDrive - Exyte/Documents/GitHub/BcaEttv/obj/Debug/net7.0/refint/BcaEttv.gha
 C:/Users/iirwanuddin/OneDrive - Exyte/Documents/GitHub/BcaEttv/obj/Debug/net7.0/BcaEttv.pdb
+/Users/irfan/Documents/Learn/GitHub/BcaEttv/obj/Debug/net7.0/BcaEttv.csproj.AssemblyReference.cache
+/Users/irfan/Documents/Learn/GitHub/BcaEttv/obj/Debug/net7.0/BcaEttv.GeneratedMSBuildEditorConfig.editorconfig
+/Users/irfan/Documents/Learn/GitHub/BcaEttv/obj/Debug/net7.0/BcaEttv.csproj.CoreCompileInputs.cache
+/Users/irfan/Documents/Learn/GitHub/BcaEttv/obj/Debug/net7.0/BcaEttv.sourcelink.json
+/Users/irfan/Documents/Learn/GitHub/BcaEttv/bin/Debug/net7.0/BcaEttv.deps.json
+/Users/irfan/Documents/Learn/GitHub/BcaEttv/bin/Debug/net7.0/BcaEttv.runtimeconfig.json
+/Users/irfan/Documents/Learn/GitHub/BcaEttv/bin/Debug/net7.0/BcaEttv.gha
+/Users/irfan/Documents/Learn/GitHub/BcaEttv/bin/Debug/net7.0/BcaEttv.pdb
+/Users/irfan/Documents/Learn/GitHub/BcaEttv/obj/Debug/net7.0/BcaEttv.gha
+/Users/irfan/Documents/Learn/GitHub/BcaEttv/obj/Debug/net7.0/refint/BcaEttv.gha
+/Users/irfan/Documents/Learn/GitHub/BcaEttv/obj/Debug/net7.0/BcaEttv.pdb
+/Users/irfan/Documents/Learn/GitHub/BcaEttv/obj/Debug/net7.0/BcaEttv.genruntimeconfig.cache
+/Users/irfan/Documents/Learn/GitHub/BcaEttv/obj/Debug/net7.0/ref/BcaEttv.gha
