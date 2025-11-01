@@ -12,7 +12,4 @@
   <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <SourceRoot Include="/Users/irfan/.nuget/packages/" />
   </ItemGroup>
-  <PropertyGroup Condition=" '$(TargetFramework)' == 'net7.0' AND '$(ExcludeRestorePackageImports)' != 'true' ">
-    <PkgMicrosoft_NETFramework_ReferenceAssemblies_net48 Condition=" '$(PkgMicrosoft_NETFramework_ReferenceAssemblies_net48)' == '' ">/Users/irfan/.nuget/packages/microsoft.netframework.referenceassemblies.net48/1.0.3</PkgMicrosoft_NETFramework_ReferenceAssemblies_net48>
-  </PropertyGroup>
 </Project>

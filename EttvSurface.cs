@@ -7,7 +7,7 @@ using Rhino.Geometry;
 
 namespace BcaEttv
 {
-  public class BcaEttvComponent : GH_Component
+  public class EttvSurface : GH_Component
   {
     /// <summary>
     /// Each implementation of GH_Component must provide a public 
@@ -16,8 +16,8 @@ namespace BcaEttv
     /// Subcategory the panel. If you use non-existing tab or panel names, 
     /// new tabs/panels will automatically be created.
     /// </summary>
-    public BcaEttvComponent()
-      : base("BcaEttv Surface", "StvSrf",
+    public EttvSurface()
+      : base("EttvSurface", "srf",
         "Construct BcaEttv Surface",
         "BcaEttv", "Geometry")
     {
@@ -47,7 +47,7 @@ namespace BcaEttv
     {
       // Use the pManager object to register your output parameters.
       // Output parameters do not have default values, but they too must have the correct access type.
-      pManager.AddCurveParameter("Ettv Object", "O", "Ettv Object to construct Ettv Model", GH_ParamAccess.item);
+      pManager.AddCurveParameter("EttvSurface", "s", "Ettv Surface to construct Ettv Model", GH_ParamAccess.item);
 
       // Sometimes you want to hide a specific parameter from the Rhino preview.
       // You can use the HideParameter() method as a quick way:
