@@ -1,27 +1,3 @@
-/Users/irfan/Projects/BcaEttv/bin/Debug/net7.0-windows/BcaEttv.deps.json
-/Users/irfan/Projects/BcaEttv/bin/Debug/net7.0-windows/BcaEttv.runtimeconfig.json
-/Users/irfan/Projects/BcaEttv/bin/Debug/net7.0-windows/BcaEttv.gha
-/Users/irfan/Projects/BcaEttv/bin/Debug/net7.0-windows/BcaEttv.pdb
-/Users/irfan/Projects/BcaEttv/obj/Debug/net7.0-windows/BcaEttv.csproj.AssemblyReference.cache
-/Users/irfan/Projects/BcaEttv/obj/Debug/net7.0-windows/BcaEttv.GeneratedMSBuildEditorConfig.editorconfig
-/Users/irfan/Projects/BcaEttv/obj/Debug/net7.0-windows/BcaEttv.AssemblyInfoInputs.cache
-/Users/irfan/Projects/BcaEttv/obj/Debug/net7.0-windows/BcaEttv.AssemblyInfo.cs
-/Users/irfan/Projects/BcaEttv/obj/Debug/net7.0-windows/BcaEttv.csproj.CoreCompileInputs.cache
-/Users/irfan/Projects/BcaEttv/obj/Debug/net7.0-windows/BcaEttv.gha
-/Users/irfan/Projects/BcaEttv/obj/Debug/net7.0-windows/refint/BcaEttv.gha
-/Users/irfan/Projects/BcaEttv/obj/Debug/net7.0-windows/BcaEttv.pdb
-/Users/irfan/Projects/BcaEttv/obj/Debug/net7.0-windows/BcaEttv.genruntimeconfig.cache
-/Users/irfan/Projects/BcaEttv/obj/Debug/net7.0-windows/ref/BcaEttv.gha
-/Users/irfan/Projects/BcaEttv/obj/Debug/net7.0-windows/BcaEttv.sourcelink.json
-C:/Users/iirwanuddin/OneDrive - Exyte/Documents/GitHub/BcaEttv/obj/Debug/net7.0-windows/BcaEttv.csproj.AssemblyReference.cache
-C:/Users/iirwanuddin/OneDrive - Exyte/Documents/GitHub/BcaEttv/obj/Debug/net7.0-windows/BcaEttv.GeneratedMSBuildEditorConfig.editorconfig
-C:/Users/iirwanuddin/OneDrive - Exyte/Documents/GitHub/BcaEttv/obj/Debug/net7.0-windows/BcaEttv.AssemblyInfoInputs.cache
-C:/Users/iirwanuddin/OneDrive - Exyte/Documents/GitHub/BcaEttv/obj/Debug/net7.0-windows/BcaEttv.AssemblyInfo.cs
-C:/Users/iirwanuddin/OneDrive - Exyte/Documents/GitHub/BcaEttv/obj/Debug/net7.0-windows/BcaEttv.csproj.CoreCompileInputs.cache
-C:/Users/iirwanuddin/OneDrive - Exyte/Documents/GitHub/BcaEttv/obj/Debug/net7.0-windows/BcaEttv.sourcelink.json
-C:/Users/iirwanuddin/OneDrive - Exyte/Documents/GitHub/BcaEttv/obj/Debug/net7.0-windows/BcaEttv.gha
-C:/Users/iirwanuddin/OneDrive - Exyte/Documents/GitHub/BcaEttv/obj/Debug/net7.0-windows/refint/BcaEttv.gha
-C:/Users/iirwanuddin/OneDrive - Exyte/Documents/GitHub/BcaEttv/obj/Debug/net7.0-windows/BcaEttv.pdb
 /Users/irfan/Documents/Learn/GitHub/BcaEttv/obj/Debug/net7.0-windows/BcaEttv.csproj.AssemblyReference.cache
 /Users/irfan/Documents/Learn/GitHub/BcaEttv/obj/Debug/net7.0-windows/BcaEttv.GeneratedMSBuildEditorConfig.editorconfig
 /Users/irfan/Documents/Learn/GitHub/BcaEttv/obj/Debug/net7.0-windows/BcaEttv.csproj.CoreCompileInputs.cache

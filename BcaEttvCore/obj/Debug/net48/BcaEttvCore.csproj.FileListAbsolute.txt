@@ -1,0 +1,3 @@
+/Users/irfan/Documents/Learn/GitHub/BcaEttv/BcaEttvCore/obj/Debug/net48/BcaEttvCore.GeneratedMSBuildEditorConfig.editorconfig
+/Users/irfan/Documents/Learn/GitHub/BcaEttv/BcaEttvCore/obj/Debug/net48/BcaEttvCore.csproj.CoreCompileInputs.cache
+/Users/irfan/Documents/Learn/GitHub/BcaEttv/BcaEttvCore/obj/Debug/net48/BcaEttvCore.sourcelink.json

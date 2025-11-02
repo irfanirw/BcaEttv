@@ -5,14 +5,17 @@
     <TargetFrameworks>net7.0-windows;net7.0;net48</TargetFrameworks>
     <EnableDynamicLoading>true</EnableDynamicLoading>
     <TargetExt>.gha</TargetExt>
+    
+    <!-- Disable SDK assembly attribute generation -->
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
+    
     <NoWarn>NU1701;NETSDK1086</NoWarn>
     <EnableWindowsTargeting>true</EnableWindowsTargeting>
 
     <!-- Fix: use modern C# (for global usings) -->
     <LangVersion>latest</LangVersion>
 
-    <!-- If you have manual AssemblyInfo.cs, disable SDK auto-generation to avoid duplicates -->
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
   
   <PropertyGroup>
@@ -25,6 +28,12 @@
   
   <ItemGroup>
     <PackageReference Include="Grasshopper" Version="8.0.23304.9001" ExcludeAssets="runtime" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Icons/EttvSurface.png" />
+    <EmbeddedResource Include="Icons/EttvConstruction.png" />
+    <EmbeddedResource Include="Icons/EttvMaterial.png" />
   </ItemGroup>
 
   <!-- For Windows only builds -->
