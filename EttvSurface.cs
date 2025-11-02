@@ -7,7 +7,8 @@ using Rhino.Geometry;
 
 namespace BcaEttv
 {
-  public class EttvSurface : GH_Component
+  public class
+  EttvSurface : GH_Component
   {
     /// <summary>
     /// Each implementation of GH_Component must provide a public 

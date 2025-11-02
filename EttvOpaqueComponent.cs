@@ -14,6 +14,8 @@ namespace BcaEttv
 
         protected override void RegisterInputParams(GH_Component.GH_InputParamManager pManager)
         {
+            // added Id as first input (tracking label)
+            pManager.AddTextParameter("Id", "Id", "Tracking label / identifier for reports", GH_ParamAccess.item);
             pManager.AddTextParameter("Name", "N", "Construction name", GH_ParamAccess.item);
             pManager.AddNumberParameter("Uvalue", "U", "Thermal transmittance (U-value, W/m²K)", GH_ParamAccess.item);
         }
@@ -25,25 +27,8 @@ namespace BcaEttv
 
         protected override void SolveInstance(IGH_DataAccess DA)
         {
-            string name = string.Empty;
-            double uvalue = 0.0;
-
-            if (!DA.GetData(0, ref name)) return;
-            if (!DA.GetData(1, ref uvalue)) return;
-
-            if (uvalue < 0)
-            {
-                AddRuntimeMessage(GH_RuntimeMessageLevel.Error, "U-value must be >= 0");
-                return;
-            }
-
-            var cons = new EttvConstruction
-            {
-                Name = name,
-                UValue = uvalue
-            };
-
-            DA.SetData(0, cons);
+            // TODO: implement EttvConstruction creation here.
+            AddRuntimeMessage(GH_RuntimeMessageLevel.Remark, "EttvOpaqueConstruction: SolveInstance not implemented.");
         }
 
         public override GH_Exposure Exposure => GH_Exposure.primary;
