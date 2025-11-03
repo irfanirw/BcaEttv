@@ -37,6 +37,8 @@
     <EmbeddedResource Include="Icons/EttvUValue.png" />
     <EmbeddedResource Include="Icons/Sc2Generator.png" />
     <EmbeddedResource Include="Icons/EttvFenestrationConstruction.png" />
+    <EmbeddedResource Include="Icons/EttvModel.png" />
+    <EmbeddedResource Include="Icons/ComputeEttv.png" />
   </ItemGroup>
 
   <!-- For Windows only builds -->
