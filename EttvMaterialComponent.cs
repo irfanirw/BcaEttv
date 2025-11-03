@@ -17,6 +17,11 @@ namespace BcaEttv
             pManager.AddTextParameter("Name", "N", "Material name", GH_ParamAccess.item);
             pManager.AddNumberParameter("Conductivity", "k", "Thermal conductivity (W/m·K)", GH_ParamAccess.item);
             pManager.AddNumberParameter("Thickness", "t", "Thickness in millimetres (mm)", GH_ParamAccess.item);
+
+            // allow inputs to be empty without producing the yellow/orange missing-input warning
+            pManager[0].Optional = true;
+            pManager[1].Optional = true;
+            pManager[2].Optional = true;
         }
 
         protected override void RegisterOutputParams(GH_Component.GH_OutputParamManager pManager)
@@ -30,12 +35,20 @@ namespace BcaEttv
             double conductivity = 0.0;
             double thicknessMm = 0.0;
 
-            if (!DA.GetData(0, ref name)) return;
-            if (!DA.GetData(1, ref conductivity)) return;
-            if (!DA.GetData(2, ref thicknessMm)) return;
+            // read inputs if present; don't return on missing inputs (they're optional)
+            DA.GetData(0, ref name);
+            DA.GetData(1, ref conductivity);
+            DA.GetData(2, ref thicknessMm);
 
-            // TODO: construct EttvMaterial (BcaEttvCore.EttvMaterial) and set as output.
-            AddRuntimeMessage(GH_RuntimeMessageLevel.Remark, "EttvMaterial creation not implemented yet.");
+            // Placeholder: no runtime warnings emitted when inputs are absent.
+            // If no meaningful input was provided, output null (quietly).
+            if (string.IsNullOrEmpty(name) && conductivity == 0.0 && thicknessMm == 0.0)
+            {
+                DA.SetData(0, null);
+                return;
+            }
+
+            // TODO: construct EttvMaterial (BcaEttvCore.EttvMaterial) and set as output in the future.
             DA.SetData(0, null);
         }
 

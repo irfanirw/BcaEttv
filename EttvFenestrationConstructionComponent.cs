@@ -1,25 +1,26 @@
 using System;
 using Grasshopper.Kernel;
-using BcaEttvCore;
+using Rhino.Geometry;
+using BcaEttvCore; // added so we can reference EttvConstruction
 
 namespace BcaEttv
 {
-    public class EttvOpaqueConstruction : GH_Component
+    public class EttvFenestrationConstruction2Component : GH_Component
     {
-        public EttvOpaqueConstruction()
-          : base("EttvOpaqueConstruction", "EOC",
-                 "Create an EttvConstruction (opaque) from name and U-value",
+        public EttvFenestrationConstruction2Component()
+          : base("EttvFenestrationConstruction", "EFC2",
+                 "Create an ETTV Fenestration Construction",
                  "BcaEttv", "Geometry & Inputs")
         { }
 
         protected override void RegisterInputParams(GH_Component.GH_InputParamManager pManager)
         {
-            // added Id as first input (tracking label)
-            pManager.AddTextParameter("Id", "Id", "Tracking label / identifier for reports", GH_ParamAccess.item);
+            pManager.AddTextParameter("Id", "ID", "Tracking identifier", GH_ParamAccess.item);
             pManager.AddTextParameter("Name", "N", "Construction name", GH_ParamAccess.item);
-            pManager.AddNumberParameter("Uvalue", "U", "Thermal transmittance (U-value, W/m²K)", GH_ParamAccess.item);
+            pManager.AddNumberParameter("Uvalue", "U", "U-value (W/m²K)", GH_ParamAccess.item);
+            pManager.AddNumberParameter("SC1", "SC1", "Solar coefficient 1 value", GH_ParamAccess.item);
 
-            // allow inputs to be left empty without producing the yellow/orange missing-input warning
+            // allow inputs to be empty without producing the yellow/orange missing-input warning
             for (int i = 0; i < pManager.ParamCount; i++)
                 Params.Input[i].Optional = true;
         }
@@ -35,12 +36,15 @@ namespace BcaEttv
             string id = null;
             string name = null;
             double uvalue = double.NaN;
+            double sc1 = double.NaN;
 
             DA.GetData(0, ref id);    // optional
             DA.GetData(1, ref name);  // optional
             DA.GetData(2, ref uvalue);// optional
+            DA.GetData(3, ref sc1);   // optional
 
-            // Placeholder: do not emit missing-input warnings. Output null until implemented.
+            // No warnings produced when inputs are missing.
+            // Placeholder: creation logic to be implemented later.
             DA.SetData(0, null);
         }
 
@@ -50,14 +54,12 @@ namespace BcaEttv
         {
             get
             {
-                // Load embedded icon from assembly resources
-                var assembly = System.Reflection.Assembly.GetExecutingAssembly();
-                using var stream = assembly.GetManifestResourceStream("BcaEttv.Icons.EttvConstruction.png");
-                if (stream == null) return null;
-                return new System.Drawing.Bitmap(stream);
+                var asm = System.Reflection.Assembly.GetExecutingAssembly();
+                using var stream = asm.GetManifestResourceStream("BcaEttv.Icons.EttvFenestrationConstruction.png");
+                return stream is null ? null : new System.Drawing.Bitmap(stream);
             }
         }
 
-        public override Guid ComponentGuid => new Guid("b8a3c2f2-d4b3-4c7c-9f6d-5d6e5b7c8a11");
+        public override Guid ComponentGuid => new Guid("f7e8d9c0-b1a2-4c3d-9e4f-5a6b7c8d9e0f");
     }
 }
