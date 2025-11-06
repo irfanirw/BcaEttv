@@ -39,6 +39,7 @@
     <EmbeddedResource Include="Icons/EttvFenestrationConstruction.png" />
     <EmbeddedResource Include="Icons/EttvModel.png" />
     <EmbeddedResource Include="Icons/ComputeEttv.png" />
+    <EmbeddedResource Include="Icons/DeconstructEttvConstruction.png" />
   </ItemGroup>
 
   <ItemGroup>

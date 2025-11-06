@@ -13,10 +13,81 @@
         "build": {
           "build/Microsoft.NETFramework.ReferenceAssemblies.net48.targets": {}
         }
+      },
+      "RhinoCommon/8.0.23304.9001": {
+        "type": "package",
+        "compile": {
+          "lib/net48/Ed.Eto.dll": {
+            "related": ".xml"
+          },
+          "lib/net48/Eto.dll": {
+            "related": ".xml"
+          },
+          "lib/net48/Rhino.UI.dll": {},
+          "lib/net48/RhinoCommon.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net48/_._": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "build/net48/RhinoCommon.targets": {}
+        }
       }
     },
-    "net7.0": {},
-    "net9.0": {}
+    "net7.0": {
+      "RhinoCommon/8.0.23304.9001": {
+        "type": "package",
+        "compile": {
+          "lib/net48/Ed.Eto.dll": {
+            "related": ".xml"
+          },
+          "lib/net48/Eto.dll": {
+            "related": ".xml"
+          },
+          "lib/net48/Rhino.UI.dll": {},
+          "lib/net48/RhinoCommon.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net48/_._": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "build/net48/RhinoCommon.targets": {}
+        }
+      }
+    },
+    "net9.0": {
+      "RhinoCommon/8.0.23304.9001": {
+        "type": "package",
+        "compile": {
+          "lib/net48/Ed.Eto.dll": {
+            "related": ".xml"
+          },
+          "lib/net48/Eto.dll": {
+            "related": ".xml"
+          },
+          "lib/net48/Rhino.UI.dll": {},
+          "lib/net48/RhinoCommon.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net48/_._": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "build/net48/RhinoCommon.targets": {}
+        }
+      }
+    }
   },
   "libraries": {
     "Microsoft.NETFramework.ReferenceAssemblies/1.0.3": {
@@ -409,14 +480,40 @@
         "microsoft.netframework.referenceassemblies.net48.1.0.3.nupkg.sha512",
         "microsoft.netframework.referenceassemblies.net48.nuspec"
       ]
+    },
+    "RhinoCommon/8.0.23304.9001": {
+      "sha512": "hWuqXjcj/eb1/z8+bml4Bav/8Oug2p6t0mAVf37GhX9sP+M1aYNO9FappqeN8oefcIBkLBmAzr46DYNhTxFAGQ==",
+      "type": "package",
+      "path": "rhinocommon/8.0.23304.9001",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Eto-LICENSE.txt",
+        "build/net48/RhinoCommon.targets",
+        "lib/net48/Ed.Eto.dll",
+        "lib/net48/Ed.Eto.xml",
+        "lib/net48/Eto.dll",
+        "lib/net48/Eto.xml",
+        "lib/net48/Rhino.UI.dll",
+        "lib/net48/RhinoCommon.dll",
+        "lib/net48/RhinoCommon.xml",
+        "rhinocommon.8.0.23304.9001.nupkg.sha512",
+        "rhinocommon.nuspec",
+        "rhinocommon.png"
+      ]
     }
   },
   "projectFileDependencyGroups": {
     ".NETFramework,Version=v4.8": [
-      "Microsoft.NETFramework.ReferenceAssemblies >= 1.0.3"
+      "Microsoft.NETFramework.ReferenceAssemblies >= 1.0.3",
+      "RhinoCommon >= 8.0.23304.9001"
     ],
-    "net7.0": [],
-    "net9.0": []
+    "net7.0": [
+      "RhinoCommon >= 8.0.23304.9001"
+    ],
+    "net9.0": [
+      "RhinoCommon >= 8.0.23304.9001"
+    ]
   },
   "packageFolders": {
     "/Users/irfan/.nuget/packages/": {}
@@ -471,6 +568,13 @@
     "frameworks": {
       "net7.0": {
         "targetAlias": "net7.0",
+        "dependencies": {
+          "RhinoCommon": {
+            "include": "Compile, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+            "target": "Package",
+            "version": "[8.0.23304.9001, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",
@@ -501,6 +605,13 @@
       },
       "net9.0": {
         "targetAlias": "net9.0",
+        "dependencies": {
+          "RhinoCommon": {
+            "include": "Compile, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+            "target": "Package",
+            "version": "[8.0.23304.9001, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",
@@ -527,10 +638,27 @@
             "target": "Package",
             "version": "[1.0.3, )",
             "autoReferenced": true
+          },
+          "RhinoCommon": {
+            "include": "Compile, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+            "target": "Package",
+            "version": "[8.0.23304.9001, )"
           }
         },
         "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.306/RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'RhinoCommon 8.0.23304.9001' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "RhinoCommon",
+      "targetGraphs": [
+        "net7.0"
+      ]
+    }
+  ]
 }

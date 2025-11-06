@@ -8,3 +8,4 @@
 /Users/irfan/Documents/Learn/GitHub/BcaEttv/BcaEttvCore/obj/Debug/net9.0/refint/BcaEttvCore.dll
 /Users/irfan/Documents/Learn/GitHub/BcaEttv/BcaEttvCore/obj/Debug/net9.0/BcaEttvCore.pdb
 /Users/irfan/Documents/Learn/GitHub/BcaEttv/BcaEttvCore/obj/Debug/net9.0/ref/BcaEttvCore.dll
+/Users/irfan/Documents/Learn/GitHub/BcaEttv/BcaEttvCore/obj/Debug/net9.0/BcaEttvCore.csproj.AssemblyReference.cache
