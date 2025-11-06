@@ -2,6 +2,7 @@
 # BcaEttv
 
 **Building Construction Authority Environmental Thermal Transfer Value (ETTV) Calculator**
+*From afterthought to algorithm — facade performance redefined*
 
 ## 📦 Overview
 
