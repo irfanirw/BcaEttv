@@ -1,17 +1,21 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	
   <PropertyGroup>
-    <!-- Select the framework(s) you wish to target.
-        Rhino 6: net45
-        Rhino 7: net48
-        Rhino 8 Windows: net48, net7.0, net7.0-windows, net7.0-windows10.0.22000.0, etc
-        Rhino 8 Mac: net7.0, net7.0-macos, net7.0-macos12.0, etc
-    -->
+    <!-- Select the framework(s) you wish to target. -->
     <TargetFrameworks>net7.0-windows;net7.0;net48</TargetFrameworks>
     <EnableDynamicLoading>true</EnableDynamicLoading>
     <TargetExt>.gha</TargetExt>
+    
+    <!-- Disable SDK assembly attribute generation -->
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
+    
     <NoWarn>NU1701;NETSDK1086</NoWarn>
     <EnableWindowsTargeting>true</EnableWindowsTargeting>
+
+    <!-- Fix: use modern C# (for global usings) -->
+    <LangVersion>latest</LangVersion>
+
   </PropertyGroup>
   
   <PropertyGroup>
@@ -25,7 +29,27 @@
   <ItemGroup>
     <PackageReference Include="Grasshopper" Version="8.0.23304.9001" ExcludeAssets="runtime" />
   </ItemGroup>
-  
+
+  <ItemGroup>
+    <EmbeddedResource Include="Icons/EttvSurface.png" />
+    <EmbeddedResource Include="Icons/EttvConstruction.png" />
+    <EmbeddedResource Include="Icons/EttvMaterial.png" />
+    <EmbeddedResource Include="Icons/EttvUValue.png" />
+    <EmbeddedResource Include="Icons/Sc2Generator.png" />
+    <EmbeddedResource Include="Icons/EttvFenestrationConstruction.png" />
+    <EmbeddedResource Include="Icons/EttvModel.png" />
+    <EmbeddedResource Include="Icons/ComputeEttv.png" />
+    <EmbeddedResource Include="Icons/DeconstructEttvConstruction.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="BcaEttvCore/**/*.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="BcaEttvCore/BcaEttvCore.csproj" />
+  </ItemGroup>
+
   <!-- For Windows only builds -->
   <PropertyGroup Condition="$(TargetFramework.Contains('-windows')) or $(TargetFramework.StartsWith('net4'))">
     <UseWindowsForms>true</UseWindowsForms>

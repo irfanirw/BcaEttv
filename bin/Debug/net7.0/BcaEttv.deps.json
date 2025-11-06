@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v7.0": {
       "BcaEttv/1.0": {
         "dependencies": {
+          "BcaEttvCore": "1.0.0",
           "Grasshopper": "8.0.23304.9001",
           "Microsoft.NETFramework.ReferenceAssemblies.net48": "1.0.3",
           "System.Drawing.Common": "7.0.0"
@@ -27,6 +28,17 @@
       "System.Drawing.Common/7.0.0": {
         "dependencies": {
           "Microsoft.Win32.SystemEvents": "7.0.0"
+        }
+      },
+      "BcaEttvCore/1.0.0": {
+        "dependencies": {
+          "RhinoCommon": "8.0.23304.9001"
+        },
+        "runtime": {
+          "BcaEttvCore.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
         }
       }
     }
@@ -71,6 +83,11 @@
       "sha512": "sha512-KIX+oBU38pxkKPxvLcLfIkOV5Ien8ReN78wro7OF5/erwcmortzeFx+iBswlh2Vz6gVne0khocQudGwaO1Ey6A==",
       "path": "system.drawing.common/7.0.0",
       "hashPath": "system.drawing.common.7.0.0.nupkg.sha512"
+    },
+    "BcaEttvCore/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

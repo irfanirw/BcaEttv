@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v7.0": {
       "BcaEttv/1.0": {
         "dependencies": {
+          "BcaEttvCore": "1.0.0",
           "Grasshopper": "8.0.23304.9001"
         },
         "runtime": {
@@ -19,7 +20,18 @@
           "RhinoCommon": "8.0.23304.9001"
         }
       },
-      "RhinoCommon/8.0.23304.9001": {}
+      "RhinoCommon/8.0.23304.9001": {},
+      "BcaEttvCore/1.0.0": {
+        "dependencies": {
+          "RhinoCommon": "8.0.23304.9001"
+        },
+        "runtime": {
+          "BcaEttvCore.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      }
     }
   },
   "libraries": {
@@ -41,6 +53,11 @@
       "sha512": "sha512-hWuqXjcj/eb1/z8+bml4Bav/8Oug2p6t0mAVf37GhX9sP+M1aYNO9FappqeN8oefcIBkLBmAzr46DYNhTxFAGQ==",
       "path": "rhinocommon/8.0.23304.9001",
       "hashPath": "rhinocommon.8.0.23304.9001.nupkg.sha512"
+    },
+    "BcaEttvCore/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }
