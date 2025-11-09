@@ -22,8 +22,10 @@ namespace BcaEttv
 
         protected override void RegisterOutputParams(GH_Component.GH_OutputParamManager pManager)
         {
-            pManager.AddTextParameter("Text", "T", "Readable construction details", GH_ParamAccess.item);
-            pManager.AddGenericParameter("Materials", "M", "List of EttvMaterial", GH_ParamAccess.list);
+            pManager.AddTextParameter("Text", "T", "Readable construction details", GH_ParamAccess.item);          // index 0
+            pManager.AddNumberParameter("Uvalue", "U", "U-value (W/m²K)", GH_ParamAccess.item);                    // index 1
+            pManager.AddNumberParameter("ScValue", "SC", "Solar control value (ScTotal)", GH_ParamAccess.item);    // index 2
+            pManager.AddGenericParameter("Materials", "M", "List of EttvMaterial", GH_ParamAccess.list);           // index 3
         }
 
         protected override void SolveInstance(IGH_DataAccess DA)
@@ -31,32 +33,57 @@ namespace BcaEttv
             object raw = null;
             DA.GetData(0, ref raw);
 
-            // unwrap GH goo
             if (raw is IGH_Goo goo)
                 raw = (goo as GH_ObjectWrapper)?.Value ?? goo.ScriptVariable();
 
             string result = string.Empty;
             var mats = new List<EttvMaterial>();
+            double uValue = 0.0;
+            double scValue = 0.0;
+            bool scIsEmpty = false;
 
             if (raw is EttvConstruction cons && raw.GetType().Assembly == typeof(EttvConstruction).Assembly)
             {
-                // Use core helper
-                result = DeconstructEttvConstruction.ToText(cons);
+                result = EttvConstructionDeconstructor.ToText(cons);
+                uValue = cons.Uvalue;
                 if (cons.EttvMaterials != null)
                     mats.AddRange(cons.EttvMaterials);
+
+                if (cons is EttvFenestrationConstruction fen)
+                {
+                    scValue = fen.ScTotal;
+                    if (scValue == 0.0)
+                        scValue = fen.Sc1 * (fen.Sc2 == 0 ? 1.0 : fen.Sc2);
+                }
+                else if (cons is EttvOpaqueConstruction)
+                {
+                    scIsEmpty = true;
+                }
+                else
+                {
+                    var pi = cons.GetType().GetProperty("ScTotal", System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.IgnoreCase);
+                    if (pi != null)
+                    {
+                        var v = pi.GetValue(cons);
+                        if (v != null)
+                            scValue = Convert.ToDouble(v);
+                    }
+                }
             }
             else if (raw == null)
             {
-                result = string.Empty; // quiet when nothing provided
+                result = string.Empty;
             }
             else
             {
-                // Unsupported type provided
                 result = "EttvConstruction: invalid input type";
             }
 
             DA.SetData(0, result);
-            DA.SetDataList(1, mats);
+            DA.SetData(1, uValue);
+            if (scIsEmpty) DA.SetData(2, null);
+            else DA.SetData(2, scValue);
+            DA.SetDataList(3, mats);
         }
 
         public override GH_Exposure Exposure => GH_Exposure.primary;

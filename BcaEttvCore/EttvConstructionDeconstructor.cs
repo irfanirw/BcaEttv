@@ -4,7 +4,7 @@ using System.Reflection;
 
 namespace BcaEttvCore
 {
-    public static class DeconstructEttvConstruction
+    public static class EttvConstructionDeconstructor
     {
         // Returns a human-readable text describing the construction and its materials.
         public static string ToText(EttvConstruction construction)
