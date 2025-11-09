@@ -48,6 +48,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Include="BcaEttvCore/EttvModelExporter.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="BcaEttvCore/BcaEttvCore.csproj" />
   </ItemGroup>
 

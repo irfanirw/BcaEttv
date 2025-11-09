@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
+using System.IO; // added
 using Grasshopper.Kernel;
+using Grasshopper.Kernel.Types;
 using BcaEttvCore;
 
 namespace BcaEttv
@@ -15,11 +17,12 @@ namespace BcaEttv
 
         protected override void RegisterInputParams(GH_Component.GH_InputParamManager pManager)
         {
+            pManager.AddTextParameter("ProjectName", "PN", "Override EttvModel.ProjectName", GH_ParamAccess.item);
+            pManager.AddTextParameter("Version", "V", "Override EttvModel.Version", GH_ParamAccess.item);
             pManager.AddGenericParameter("EttvSurfaces", "S", "List of EttvSurface objects", GH_ParamAccess.list);
-            pManager.AddBooleanParameter("Reorder", "R", "Reorder surfaces for visualization", GH_ParamAccess.item, false);
-            pManager.AddBooleanParameter("WriteEtvFile", "W", "Write .etv file to disk", GH_ParamAccess.item, false);
-
-            // Make all inputs optional to avoid yellow warnings
+            pManager.AddBooleanParameter("Reorder", "R", "Reorder surfaces for calculation", GH_ParamAccess.item, false);
+            pManager.AddBooleanParameter("WriteJson", "W", "Write EttvModel JSON file to disk", GH_ParamAccess.item, false);
+            pManager.AddTextParameter("Directory", "D", "Output directory (ignored; exports next to .gh file)", GH_ParamAccess.item);
             for (int i = 0; i < pManager.ParamCount; i++)
                 pManager[i].Optional = true;
         }
@@ -27,25 +30,97 @@ namespace BcaEttv
         protected override void RegisterOutputParams(GH_Component.GH_OutputParamManager pManager)
         {
             pManager.AddTextParameter("Status", "S", "Operation status and messages", GH_ParamAccess.item);
-            pManager.AddGenericParameter("EttvModel", "M", "EttvModel object (not implemented)", GH_ParamAccess.item);
+            pManager.AddGenericParameter("EttvModel", "M", "EttvModel object", GH_ParamAccess.item);
+            pManager.AddTextParameter("FilePath", "F", "Path to exported JSON file", GH_ParamAccess.item);
         }
 
         protected override void SolveInstance(IGH_DataAccess DA)
         {
-            // Placeholder implementation
-            var surfaces = new List<EttvSurface>();
+            string projectName = null;
+            string version = null;
+            var rawSurfaces = new List<object>();
             bool reorder = false;
-            bool writeFile = false;
+            bool writeJson = false;
+            string directory = null;
 
-            // Get inputs (optional)
-            DA.GetDataList(0, surfaces);
-            DA.GetData(1, ref reorder);
-            DA.GetData(2, ref writeFile);
+            DA.GetData(0, ref projectName);
+            DA.GetData(1, ref version);
+            DA.GetDataList(2, rawSurfaces);
+            DA.GetData(3, ref reorder);
+            DA.GetData(4, ref writeJson);
+            DA.GetData(5, ref directory);
 
-            // TODO: Implement model creation and file writing
-            AddRuntimeMessage(GH_RuntimeMessageLevel.Remark, "EttvModel: Implementation pending");
-            DA.SetData(0, "Model creation not implemented");
-            DA.SetData(1, null); // EttvModel placeholder
+            // Extract valid EttvSurface objects
+            var surfaces = new List<EttvSurface>();
+            foreach (var item in rawSurfaces)
+            {
+                object v = item;
+                if (v is IGH_Goo goo)
+                    v = (goo as GH_ObjectWrapper)?.Value ?? goo.ScriptVariable();
+
+                if (v is EttvSurface s && v.GetType().Assembly == typeof(EttvSurface).Assembly)
+                    surfaces.Add(s);
+            }
+
+            if (surfaces.Count == 0)
+            {
+                DA.SetData(0, "No valid EttvSurface objects provided.");
+                DA.SetData(1, null);
+                DA.SetData(2, string.Empty);
+                return;
+            }
+
+            // Create EttvModel
+            var model = new EttvModel(surfaces);
+
+            // Override auto defaults if user supplied values
+            if (!string.IsNullOrWhiteSpace(projectName))
+                model.ProjectName = projectName;
+            if (!string.IsNullOrWhiteSpace(version))
+                model.Version = version;
+
+            // Reorder if requested and not already reordered
+            if (reorder && !model.Reordered)
+            {
+                model.ReorderEttvSurfaces();
+            }
+
+            string status = $"EttvModel created: {model.ProjectName} v{model.Version}\n";
+            status += $"Surfaces: {model.Surfaces.Count}\n";
+            status += $"Reordered: {model.Reordered}";
+
+            string filePath = string.Empty;
+
+            if (writeJson)
+            {
+                try
+                {
+                    // Always export next to the current .gh file
+                    var ghDoc = OnPingDocument();
+                    string ghDir = null;
+                    if (ghDoc != null && !string.IsNullOrWhiteSpace(ghDoc.FilePath))
+                        ghDir = Path.GetDirectoryName(ghDoc.FilePath);
+                    if (string.IsNullOrWhiteSpace(ghDir))
+                    {
+                        // Fallback when the GH file is not saved yet
+                        ghDir = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                        AddRuntimeMessage(GH_RuntimeMessageLevel.Remark, "Grasshopper file is not saved. Exporting to Documents folder.");
+                    }
+                    directory = ghDir; // override any user-provided directory
+                    var exporter = new EttvModelExporter(model);
+                    filePath = exporter.ExportEttv(directory);
+                    status += $"\n✓ JSON exported: {filePath}";
+                }
+                catch (Exception ex)
+                {
+                    status += $"\n✗ JSON export failed: {ex.Message}";
+                    AddRuntimeMessage(GH_RuntimeMessageLevel.Error, $"JSON export failed: {ex.Message}");
+                }
+            }
+
+            DA.SetData(0, status);
+            DA.SetData(1, model);
+            DA.SetData(2, filePath);
         }
 
         public override GH_Exposure Exposure => GH_Exposure.primary;
@@ -56,7 +131,9 @@ namespace BcaEttv
             {
                 var asm = System.Reflection.Assembly.GetExecutingAssembly();
                 using var stream = asm.GetManifestResourceStream("BcaEttv.Icons.EttvModel.png");
+#pragma warning disable CA1416
                 return stream is null ? null : new System.Drawing.Bitmap(stream);
+#pragma warning restore CA1416
             }
         }
 
