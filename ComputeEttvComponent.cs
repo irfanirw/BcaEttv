@@ -31,7 +31,6 @@ namespace BcaEttv
 
         protected override void SolveInstance(IGH_DataAccess DA)
         {
-            // Placeholder implementation
             EttvModel model = null;
             bool runComputation = false;
 
@@ -39,11 +38,32 @@ namespace BcaEttv
             DA.GetData(0, ref model);
             DA.GetData(1, ref runComputation);
 
-            // TODO: Implement ETTV computation
-            AddRuntimeMessage(GH_RuntimeMessageLevel.Remark, "ComputeEttv: Implementation pending");
-            DA.SetData(0, model);         // Return input model unchanged for now
-            DA.SetData(1, 0.0);           // Placeholder ETTV value
-            DA.SetData(2, false);         // Placeholder pass status
+            if (model == null)
+            {
+                AddRuntimeMessage(GH_RuntimeMessageLevel.Warning, "No EttvModel provided.");
+                DA.SetData(0, null);
+                DA.SetData(1, double.NaN);
+                DA.SetData(2, false);
+                return;
+            }
+
+            double? ettvValue = model.ComputationResult?.EttvValue;
+            bool? pass = model.ComputationResult?.Pass;
+
+            if (runComputation)
+            {
+                var calculator = new EttvCalculator(model);
+                ettvValue = calculator.CalculateEttv();
+                pass = model.ComputationResult?.Pass;
+            }
+            else if (ettvValue == null)
+            {
+                AddRuntimeMessage(GH_RuntimeMessageLevel.Remark, "Set RunComputation to true to calculate ETTV.");
+            }
+
+            DA.SetData(0, model);
+            DA.SetData(1, ettvValue ?? double.NaN);
+            DA.SetData(2, pass ?? false);
         }
 
         public override GH_Exposure Exposure => GH_Exposure.primary;

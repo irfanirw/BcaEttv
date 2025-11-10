@@ -12,7 +12,6 @@ namespace BcaEttvCore
         public string Version { get; set; } = string.Empty;
         public bool Reordered { get; set; } = false;
 
-        // Backing field to renumber IDs whenever the list is assigned
         private List<EttvSurface> _surfaces = new();
         public List<EttvSurface> Surfaces
         {
@@ -24,8 +23,8 @@ namespace BcaEttvCore
             }
         }
 
-        public double? EttvValue { get; set; }
-        public List<List<int>> EttvSurfaceOrder { get; set; } = new();
+        public List<List<EttvSurface>> EttvSurfaceOrder { get; set; } = new();
+        public EttvComputationResult ComputationResult { get; set; }
 
         public EttvModel() { }
 
@@ -35,20 +34,18 @@ namespace BcaEttvCore
             ProjectName = $"EttvProject_{_projectCounter++}";
             Version = (_versionCounter++).ToString();
             Reordered = false;
-
-            // Ensure IDs follow the order in the newly assigned list
             RenumberSurfaceIds();
         }
 
         /// <summary>
-        /// Cluster surfaces based on EttvOrientation.Name into nested index lists.
+        /// Cluster surfaces based on EttvOrientation.Name into nested lists of EttvSurface.
         /// Does not mutate the Surfaces list order. Sets Reordered = true.
         /// </summary>
         public void ReorderEttvSurfaces()
         {
             if (Surfaces == null || Surfaces.Count == 0)
             {
-                EttvSurfaceOrder = new List<List<int>>();
+                EttvSurfaceOrder = new List<List<EttvSurface>>();
                 Reordered = true;
                 return;
             }
@@ -69,19 +66,18 @@ namespace BcaEttvCore
             };
 
             var grouped = Surfaces
-                .Select((s, idx) => new { s, idx, key = s?.Orientation?.Name ?? "Unknown" })
+                .Select(s => new { s, key = s?.Orientation?.Name ?? "Unknown" })
                 .GroupBy(x => x.key)
                 .OrderBy(g => orderMap.TryGetValue(g.Key, out var k) ? k : int.MaxValue)
                 .ThenBy(g => g.Key);
 
             EttvSurfaceOrder = grouped
-                .Select(g => g.Select(x => x.idx).ToList())
+                .Select(g => g.Select(x => x.s).ToList())
                 .ToList();
 
             Reordered = true;
         }
 
-        // Renumber each surface Id sequentially based on current Surfaces order
         private void RenumberSurfaceIds()
         {
             if (_surfaces == null) return;

@@ -50,18 +50,17 @@ namespace BcaEttvCore
                 ProjectName = EttvModel.ProjectName,
                 Version = EttvModel.Version,
                 Reordered = EttvModel.Reordered,
-                EttvValue = EttvModel.EttvValue,
-                // Deep copy nested lists
-                EttvSurfaceOrder = EttvModel.EttvSurfaceOrder?.Select(inner => inner?.ToList() ?? new List<int>()).ToList() ?? new(),
+                // Map nested lists of EttvSurface -> nested lists of surface Ids for JSON
+                EttvSurfaceOrder = EttvModel.EttvSurfaceOrder?
+                    .Select(inner => inner?.Select(s => s?.Id ?? -1).ToList() ?? new List<int>())
+                    .ToList() ?? new(),
                 Surfaces = EttvModel.Surfaces?
                     .Select(s =>
                     {
                         var fen = s.Construction as EttvFenestrationConstruction;
                         double? scTotal = null;
                         if (fen != null)
-                        {
                             scTotal = fen.ScTotal != 0 ? fen.ScTotal : fen.Sc1 * (fen.Sc2 == 0 ? 1.0 : fen.Sc2);
-                        }
 
                         return new EttvSurfaceExportDto
                         {
@@ -98,7 +97,6 @@ namespace BcaEttvCore
             public string ProjectName { get; set; }
             public string Version { get; set; }
             public bool Reordered { get; set; }
-            public double? EttvValue { get; set; }
             public List<List<int>> EttvSurfaceOrder { get; set; }
             public List<EttvSurfaceExportDto> Surfaces { get; set; }
         }

@@ -14,7 +14,10 @@ namespace BcaEttv
           : base("DeconstructEttvSurface", "DES",
                  "Deconstruct a list of EttvSurface objects",
                  "BcaEttv", "Utilities")
-        { }
+        {
+            // Disable preview by default
+            this.Hidden = true;
+        }
 
         protected override void RegisterInputParams(GH_InputParamManager pManager)
         {
