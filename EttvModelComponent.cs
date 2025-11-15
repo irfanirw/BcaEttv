@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO; // added
+using System.Linq;
 using Grasshopper.Kernel;
 using Grasshopper.Kernel.Types;
 using BcaEttvCore;
@@ -20,7 +21,6 @@ namespace BcaEttv
             pManager.AddTextParameter("ProjectName", "PN", "Override EttvModel.ProjectName", GH_ParamAccess.item);
             pManager.AddTextParameter("Version", "V", "Override EttvModel.Version", GH_ParamAccess.item);
             pManager.AddGenericParameter("EttvSurfaces", "S", "List of EttvSurface objects", GH_ParamAccess.list);
-            pManager.AddBooleanParameter("Reorder", "R", "Reorder surfaces for calculation", GH_ParamAccess.item, false);
             pManager.AddBooleanParameter("WriteJson", "W", "Write EttvModel JSON file to disk", GH_ParamAccess.item, false);
             pManager.AddTextParameter("Directory", "D", "Output directory (ignored; exports next to .gh file)", GH_ParamAccess.item);
             for (int i = 0; i < pManager.ParamCount; i++)
@@ -39,16 +39,14 @@ namespace BcaEttv
             string projectName = null;
             string version = null;
             var rawSurfaces = new List<object>();
-            bool reorder = false;
             bool writeJson = false;
             string directory = null;
 
             DA.GetData(0, ref projectName);
             DA.GetData(1, ref version);
             DA.GetDataList(2, rawSurfaces);
-            DA.GetData(3, ref reorder);
-            DA.GetData(4, ref writeJson);
-            DA.GetData(5, ref directory);
+            DA.GetData(3, ref writeJson);
+            DA.GetData(4, ref directory);
 
             // Extract valid EttvSurface objects
             var surfaces = new List<EttvSurface>();
@@ -79,15 +77,8 @@ namespace BcaEttv
             if (!string.IsNullOrWhiteSpace(version))
                 model.Version = version;
 
-            // Reorder if requested and not already reordered
-            if (reorder && !model.Reordered)
-            {
-                model.ReorderEttvSurfaces();
-            }
-
             string status = $"EttvModel created: {model.ProjectName} v{model.Version}\n";
-            status += $"Surfaces: {model.Surfaces.Count}\n";
-            status += $"Reordered: {model.Reordered}";
+            status += $"Surfaces: {model.Surfaces.Count}";
 
             string filePath = string.Empty;
 
@@ -107,8 +98,9 @@ namespace BcaEttv
                         AddRuntimeMessage(GH_RuntimeMessageLevel.Remark, "Grasshopper file is not saved. Exporting to Documents folder.");
                     }
                     directory = ghDir; // override any user-provided directory
-                    var exporter = new EttvModelExporter(model);
-                    filePath = exporter.ExportEttv(directory);
+                    Directory.CreateDirectory(directory);
+                    filePath = BuildExportPath(model, directory);
+                    EttvModelExporter.ExportToJson(model, filePath);
                     status += $"\n✓ JSON exported: {filePath}";
                 }
                 catch (Exception ex)
@@ -121,6 +113,26 @@ namespace BcaEttv
             DA.SetData(0, status);
             DA.SetData(1, model);
             DA.SetData(2, filePath);
+        }
+
+        private static string BuildExportPath(EttvModel model, string directory)
+        {
+            var project = SanitizeFileNameSegment(model?.ProjectName, "EttvModel");
+            var version = SanitizeFileNameSegment(model?.Version, "v1");
+            var fileName = $"{project}_{version}.json";
+            return Path.Combine(directory ?? string.Empty, fileName);
+        }
+
+        private static string SanitizeFileNameSegment(string value, string fallback)
+        {
+            var candidate = string.IsNullOrWhiteSpace(value) ? fallback : value.Trim();
+            var invalidChars = Path.GetInvalidFileNameChars();
+            var sanitized = new string(candidate
+                .Select(ch => invalidChars.Contains(ch) ? '_' : ch)
+                .ToArray())
+                .Trim('_');
+
+            return string.IsNullOrWhiteSpace(sanitized) ? fallback : sanitized;
         }
 
         public override GH_Exposure Exposure => GH_Exposure.primary;
